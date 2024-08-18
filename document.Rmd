@@ -1,0 +1,37 @@
+---
+knit: (function(inputFile, encoding){rmarkdown::render(inputFile,encoding=encoding,output_dir="./resultats")})
+output:
+  pdf_document: 
+    latex_engine: xelatex
+    includes:
+      in_header: "./templates/latex/preambule.tex"
+    pandoc_args: 
+      - "--variable=geometry:top=4cm"
+      - "--variable=geometry:bottom=2cm"
+      - "--variable=geometry:left=2cm"
+      - "--variable=geometry:right=2cm"
+      - "--variable=geometry:headheight=2cm"
+      - "--variable=geometry:footskip=1cm"
+      - "--variable=geometry:marginparwidth=2cm"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(stringr)
+library(magrittr)
+```
+
+
+\input{tex/pageDEgarde.tex}
+
+
+\newpage
+\tableofcontents
+  
+
+

@@ -1,0 +1,23 @@
+\usepackage[language=english]{lipsum}
+\usepackage[base]{babel}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+% \usepackage[american]{babel} % Changement de 'english' à 'american'
+
+% Custom template layout
+\newcommand{\mypage}{%
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[fill=gray](current page.north west) rectangle ([yshift=-30mm]current page.north east) node[midway] {\Huge\bfseries\sffamily\color{white}{Here is my title}};
+        \node at (current page footer area) {\Huge\bfseries\sffamily\ Page \thepage};
+    \end{tikzpicture}
+}%
+
+% Load page style
+\fancypagestyle{MyPageStyle}{%
+  \fancyhf{}
+  \fancyhead[C]{\mypage}
+  \renewcommand{\headrulewidth}{0pt}
+}%
+
+\pagestyle{MyPageStyle}

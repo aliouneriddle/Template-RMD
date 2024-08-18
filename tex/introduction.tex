@@ -1,0 +1,23 @@
+\raggedright
+\begin{titlepage}
+\pagestyle{empty}
+ 
+\begin{tikzpicture}[remember picture, overlay]
+\fill[fill=DarkOrchid](current page.north west) rectangle ([yshift=-5mm]current page.north east);
+%page box
+\draw[lightgray, fill=Rhodamine, fill opacity=0.05, line width=1mm, rounded corners=3mm] ([xshift=-5mm,yshift=5mm]current page text area.north west) rectangle ([xshift=5mm,yshift=-5mm]current page text area.south east);
+\end{tikzpicture}
+
+\vspace*{\stretch{1}}
+\begin{flushright}\LARGE
+Plan d'Audit 2024
+\end{flushright}
+\hrule
+\begin{flushleft}\huge\bfseries
+APPRENTISSAGE LATEX
+\end{flushleft}
+\vspace*{\stretch{2}}
+\begin{flushleft}
+Audit Interne
+\end{flushleft}
+\end{titlepage}
